@@ -1,5 +1,11 @@
+ import { menuItems } from "./data/db"
+
+
+
 
 function App() {
+  console.log(menuItems);
+  
   
 
   return (
