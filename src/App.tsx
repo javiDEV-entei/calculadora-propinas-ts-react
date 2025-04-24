@@ -1,4 +1,5 @@
 import MenuItem from "./components/MenuItem" 
+import OrderContents from "./components/OrderContents";
 import { menuItems } from './data/db';
 import useOrder from './hooks/useOrder';
 
@@ -8,7 +9,7 @@ import useOrder from './hooks/useOrder';
 
 function App() {
   
-  const {addItem} = useOrder()
+  const {order, addItem, removeItem} = useOrder()
   
   
 
@@ -37,13 +38,15 @@ function App() {
 
         </div>
 
-        <div>
-    <h2>Comsumo</h2>
+        <div className="boder border-dashed border-slate-300 p-5 rounded-lg space-y-10">
+
+          <OrderContents
+            order={order}
+            removeItem={removeItem}
+          />
+    
 
         </div>
-
-
-
   </main>
     </>
   )
